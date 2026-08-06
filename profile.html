@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Penaksir | Smart Taksir</title>
+    <!-- Hubungkan dengan CSS yang telah kita satukan (style-unified.css) -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Import Font Awesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* Styling khusus halaman Profil */
+        .profile-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .profile-hero {
+            background: linear-gradient(135deg, #087443, #15a35f);
+            border-radius: var(--radius-xl, 18px);
+            padding: 40px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow, 0 10px 30px rgba(0,0,0,.08));
+        }
+
+        .profile-big-avatar {
+            width: 100px;
+            height: 100px;
+            background: white;
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            flex-shrink: 0;
+        }
+
+        .profile-hero-info h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin: 0 0 6px 0;
+        }
+
+        .profile-hero-info p {
+            font-size: 15px;
+            opacity: 0.9;
+            margin: 0 0 12px 0;
+        }
+
+        .profile-badge-pill {
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .profile-details-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .profile-info-card {
+            background: var(--card-bg, #fff);
+            border-radius: var(--radius-xl, 18px);
+            box-shadow: var(--shadow, 0 10px 30px rgba(0,0,0,.08));
+            border: 1px solid var(--border, #e5e7eb);
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile-info-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            background: #edf8f2;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .profile-info-content h4 {
+            font-size: 13px;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin: 0 0 4px 0;
+            letter-spacing: 0.5px;
+        }
+
+        .profile-info-content span {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        @media (max-width: 768px) {
+            .profile-hero { flex-direction: column; text-align: center; }
+            .profile-details-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ============================= -->
+<!-- TOP HEADER -->
+<!-- ============================= -->
+<header class="top-header">
+    <div class="brand">
+        <div class="brand-title" style="display: flex; align-items: center; gap: 10px; color: var(--text); font-size: 20px;">
+            <i class="fa-solid fa-shield-halved" style="color: var(--primary);"></i>
+            <div>
+                <strong>Smart Taksir</strong>
+                <span style="font-size: 12px; font-weight: 400; color: var(--muted); margin-left: 8px;">Fraud Knowledge Management</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-actions" style="display: flex; align-items: center; gap: 20px;">
+        <button class="notification-button" style="background: none; border: none; font-size: 20px; color: var(--muted); cursor: pointer; position: relative;">
+            <i class="fa-regular fa-bell"></i>
+            <span class="notification-dot" style="position: absolute; top: 0; right: 0; width: 8px; height: 8px; background: red; border-radius: 50%;"></span>
+        </button>
+
+        <div class="header-profile" style="display: flex; align-items: center; gap: 12px; font-size: 14px;">
+            <div class="profile-avatar" style="width: 36px; height: 36px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;">
+                P
+            </div>
+            <div style="display: flex; flex-direction: column;">
+                <strong>Penaksir</strong>
+                <span style="color: var(--muted); font-size: 12px;">Cabang Wonokromo</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="wrap">
+
+    <!-- ============================= -->
+    <!-- SIDEBAR UTAMA -->
+    <!-- ============================= -->
+    <aside class="main-sidebar">
+        <div class="nav-section">
+            <div class="sidebar-title" style="font-size: 11px; text-transform: uppercase; letter-spacing: 1.2px; color: rgba(255, 255, 255, 0.6); margin-bottom: 12px; font-weight: 700;">
+                MENU UTAMA
+            </div>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-chart-pie" style="width: 24px; text-align: center;"></i> Dashboard</a></li>
+                <li><a href="database.html"><i class="fa-solid fa-database" style="width: 24px; text-align: center;"></i> Database Barang</a></li>
+                <li><a href="detail.html"><i class="fa-solid fa-box-open" style="width: 24px; text-align: center;"></i> Detail Barang</a></li>
+                <li><a href="ai.html"><i class="fa-solid fa-robot" style="width: 24px; text-align: center;"></i> AI Detection</a></li>
+                <li><a href="laporan.html"><i class="fa-solid fa-file-circle-plus" style="width: 24px; text-align: center;"></i> Laporan Baru</a></li>
+                <li><a href="forum.html"><i class="fa-solid fa-comments" style="width: 24px; text-align: center;"></i> Forum</a></li>
+                <li><a href="knowledge.html"><i class="fa-solid fa-book-open" style="width: 24px; text-align: center;"></i> Knowledge Center</a></li>
+                <li><a href="analytics.html"><i class="fa-solid fa-chart-line" style="width: 24px; text-align: center;"></i> Analytics</a></li>
+                <li><a href="profile.html" class="active"><i class="fa-solid fa-user" style="width: 24px; text-align: center;"></i> Profile</a></li>
+            </ul>
+        </div>
+
+        <div class="sidebar-info" style="margin-top: 30px; padding: 16px; border-radius: 14px; background: rgba(255, 255, 255, 0.08); line-height: 1.5;">
+            <h4 style="font-size: 13px; font-weight: 700; margin-bottom: 8px; color: #ffffff; display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-shield"></i> Fraud Prevention
+            </h4>
+            <p style="font-size: 12px; color: rgba(255, 255, 255, 0.9); margin: 0;">
+                Setiap informasi membantu penaksir lain mencegah risiko barang jaminan palsu.
+            </p>
+        </div>
+    </aside>
+
+    <!-- ============================= -->
+    <!-- CONTENT PROFIL -->
+    <!-- ============================= -->
+    <main class="page-container">
+
+        <div class="profile-container">
+            <!-- PAGE TITLE -->
+            <div class="page-heading">
+                <div class="title-area">
+                    <span class="category-tag">AKUN SAYA</span>
+                    <h1>Profil Penaksir</h1>
+                    <p>Informasi akun dan rekam jejak kontribusi penaksir dalam pencegahan fraud.</p>
+                </div>
+            </div>
+
+            <!-- HERO PROFILE CARD -->
+            <div class="profile-hero" style="justify-content: space-between; flex-wrap: wrap;">
+                <div style="display: flex; align-items: center; gap: 30px;">
+                    <div class="profile-big-avatar">
+                        E
+                    </div>
+                    <div class="profile-hero-info" style="margin: 0;">
+                        <h2>Kak El</h2>
+                        <p><i class="fa-solid fa-building-columns"></i> Penaksir Cabang Bandung</p>
+                        <div class="profile-badge-pill">
+                            <i class="fa-solid fa-award"></i> Badge: Fraud Hunter
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <button class="btn" style="background: rgba(255, 255, 255, 0.25); color: white; border: 1px solid rgba(255, 255, 255, 0.4); padding: 10px 18px; font-size: 13px; font-weight: 600; border-radius: 10px; backdrop-filter: blur(5px); transition: all 0.2s ease;" onmouseover="this.style.background='white'; this.style.color='var(--primary)';" onmouseout="this.style.background='rgba(255, 255, 255, 0.25)'; this.style.color='white';">
+                        <i class="fa-solid fa-pen-to-square"></i> Edit Profil
+                    </button>
+                </div>
+            </div>
+
+            <!-- DETAILS GRID -->
+            <div class="profile-details-grid">
+                
+                <!-- Card 1 -->
+                <div class="profile-info-card">
+                    <div class="profile-info-icon">
+                        <i class="fa-solid fa-file-shield"></i>
+                    </div>
+                    <div class="profile-info-content">
+                        <h4>Total Laporan Dibuat</h4>
+                        <span>23 Laporan</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="profile-info-card">
+                    <div class="profile-info-icon" style="background: #eef2ff; color: #1976d2;">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </div>
+                    <div class="profile-info-content">
+                        <h4>Status Akun</h4>
+                        <span style="color: #0b7a43;">Aktif & Terverifikasi</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="js/app.js"></script>
+</body>
