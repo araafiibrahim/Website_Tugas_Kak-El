@@ -549,4 +549,27 @@ tbody tr:hover {
         font-size: 13px !important;
     }
 }
+   @media screen and (max-width: 992px) {
+    /* 1. Munculkan tombol hamburger di layar HP */
+    #sidebarToggle {
+        display: block !important;
+    }
+
+    /* 2. Sembunyikan sidebar secara default di HP */
+    .main-sidebar {
+        position: fixed !important;
+        top: 70px !important;
+        left: -280px !important; /* Disembunyikan di luar layar sebelah kiri */
+        width: 260px !important;
+        height: calc(100vh - 70px) !important;
+        z-index: 1000 !important;
+        transition: left 0.3s ease-in-out !important;
+        box-shadow: 5px 0 15px rgba(0,0,0,0.2) !important;
+    }
+
+    /* 3. Kelas aktif untuk memunculkan sidebar saat tombol diklik */
+    .main-sidebar.mobile-active {
+        left: 0 !important;
+    }
+}
 }
