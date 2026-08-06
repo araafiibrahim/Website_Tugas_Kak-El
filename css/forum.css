@@ -1,0 +1,283 @@
+/* ========= SMART TAKSIR - FORUM (Improved) ========= */
+html,
+body{
+    height:100%;
+    margin:0;
+    overflow:hidden;
+}
+:root{
+--primary:#0b7a43;
+--primary-dark:#075d33;
+--bg:#f3f6f9;
+--card:#fff;
+--text:#1f2937;
+--muted:#6b7280;
+--border:#e5e7eb;
+--shadow:0 10px 30px rgba(0,0,0,.08);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:Segoe UI,Arial,sans-serif;
+background:var(--bg);
+color:var(--text);
+overflow:hidden;
+}
+.top-header{
+height:70px;
+background:#fff;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 24px;
+box-shadow:0 2px 12px rgba(0,0,0,.08);
+position:sticky;top:0;z-index:999;
+}
+.wrap{display:flex;height:calc(100vh - 70px)}
+.main-sidebar{
+width:250px;
+background:linear-gradient(180deg,#0b5d35,#0b7a43);
+color:#fff;
+padding:22px;
+overflow:auto;
+}
+.main-sidebar ul{list-style:none}
+.main-sidebar li{margin-bottom:8px}
+.main-sidebar a{
+display:flex;align-items:center;gap:12px;
+padding:13px 14px;
+border-radius:12px;
+color:#fff;text-decoration:none;
+transition:.25s;
+}
+.main-sidebar a:hover,.main-sidebar a.active{
+background:#fff;
+color:var(--primary);
+transform:translateX(4px);
+}
+.sidebar-info{
+margin-top:30px;
+padding:16px;
+border-radius:14px;
+background:rgba(255,255,255,.08);
+line-height:1.5;
+}
+.forum-page{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+    padding:30px;
+}
+
+.page-heading{
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+margin-bottom:20px;
+}
+.page-heading h1{
+font-size:42px;
+margin:6px 0;
+}
+.page-heading p{color:var(--muted);font-size:17px}
+.new-discussion-button{
+background:var(--primary);
+color:#fff;
+border:none;
+padding:12px 20px;
+border-radius:10px;
+cursor:pointer;
+font-weight:600;
+transition:.25s;
+}
+.new-discussion-button:hover{
+background:#13a05a;
+transform:translateY(-2px);
+}
+.forum-container{
+    flex:1;
+    display:grid;
+    grid-template-columns:360px 1fr;
+    overflow:hidden;
+    border-radius:18px;
+    min-height:0;
+    height: 100%; /* Ditambahkan agar kontainer mengisi ruang secara presisi */
+}
+
+.chat-room{
+    display:flex;
+    flex-direction:column;
+    background:#fff;
+    overflow:hidden;
+    height: 100%; /* Memastikan ruang chat terkunci di dalam layar */
+    min-height: 0;
+}
+
+.chat-body{
+    flex:1;
+    overflow-y:auto;
+    overflow-x:hidden;
+    padding:24px;
+    background:#f8fafc;
+    min-height:0;
+    scroll-behavior:smooth;
+}
+
+.chat-input-area{
+    background:#fff;
+    border-top:1px solid var(--border);
+    padding:14px 20px;
+    display:flex;
+    align-items:center;
+    gap:12px;
+    flex-shrink: 0; /* Mencegah input bar ikut mengecil atau terdorong ke bawah */
+}
+.chat-list{
+border-right:1px solid var(--border);
+display:flex;
+flex-direction:column;
+}
+
+.discussion-title{
+padding:20px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+.chat-search{
+margin:0 16px 16px;
+padding:12px 14px;
+display:flex;
+gap:10px;
+background:#f4f7f8;
+border-radius:12px;
+}
+.chat-search input{
+border:none;
+outline:none;
+background:none;
+width:100%;
+font-size:14px;
+}
+.chat-items{overflow:auto}
+.chat-item{
+display:flex;
+gap:14px;
+padding:18px;
+border-left:4px solid transparent;
+cursor:pointer;
+transition:.2s;
+}
+.chat-item:hover{
+background:#f7faf8;
+}
+.chat-item.active{
+background:#edf8f2;
+border-left-color:var(--primary);
+}
+.chat-icon{
+width:48px;height:48px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:12px;
+font-size:20px;
+}
+.gold{background:#fff4d6;color:#d79b00}
+.watch{background:#ede7ff;color:#6d56d9}
+.phone{background:#e8f2ff;color:#1976d2}
+.diamond{background:#e6fbff;color:#0d9aac}
+
+.chat-header{
+padding:22px 26px;
+background:linear-gradient(135deg,#087443,#15a35f);
+color:#fff;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.date-separator{
+text-align:center;
+margin:18px 0;
+}
+.date-separator span{
+background:#fff;
+padding:6px 14px;
+border-radius:20px;
+font-size:12px;
+color:#666;
+box-shadow:0 3px 10px rgba(0,0,0,.06);
+}
+.message{
+display:flex;
+gap:14px;
+margin-bottom:24px;
+}
+.message.right{justify-content:flex-end}
+.avatar{
+width:48px;height:48px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+color:#fff;
+font-weight:700;
+}
+.avatar-green{background:#087443}
+.avatar-blue{background:#1976d2}
+.avatar-risk{background:#7e57c2}
+.ai-avatar{background:#17a863}
+.message-wrapper{max-width:650px}
+.message-user{font-weight:700;margin-bottom:8px}
+.message-user span{
+font-weight:400;
+font-size:12px;
+color:#666;
+}
+.bubble{
+background:#fff;
+padding:18px;
+border-radius:18px;
+box-shadow:var(--shadow);
+line-height:1.6;
+}
+.message.right .bubble{
+background:#dcf5e7;
+}
+.message-input-wrapper{
+flex:1;
+display:flex;
+align-items:center;
+background:#f4f7f8;
+border-radius:12px;
+padding:10px 14px;
+}
+.message-input-wrapper textarea{
+flex:1;
+border:none;
+background:none;
+outline:none;
+resize:none;
+font-family:inherit;
+}
+.send-button{
+background:var(--primary);
+color:#fff;
+border:none;
+padding:0 20px;
+border-radius:10px;
+cursor:pointer;
+font-weight:600;
+}
+.send-button:hover{background:#13a05a}
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-thumb{
+background:#b7c9bf;
+border-radius:20px;
+}
+@media(max-width:992px){
+.main-sidebar{display:none}
+.forum-container{grid-template-columns:1fr}
+.chat-list{display:none}
+}
